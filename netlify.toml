@@ -1,0 +1,31 @@
+# Netlify configuration for Next.js deployment
+
+[build]
+  # Build command
+  command = "npm run build"
+  
+  # Output directory for Next.js
+  publish = ".next"
+
+[build.environment]
+  # Node version
+  NODE_VERSION = "18"
+
+# Next.js specific settings
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirects and rewrites
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
