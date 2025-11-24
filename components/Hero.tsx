@@ -18,7 +18,7 @@ export default function Hero() {
     ];
 
     return (
-        <section className="section relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+        <section style={{ paddingTop: "200px" }} className="section relative min-h-screen flex items-center justify-center overflow-hidden pt-48" id="home">
             {/* Decorative Background Elements */}
             <motion.div
                 className="decorative-circle"
